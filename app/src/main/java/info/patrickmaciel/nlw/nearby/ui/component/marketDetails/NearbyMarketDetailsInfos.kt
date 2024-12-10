@@ -20,7 +20,7 @@ import info.patrickmaciel.nlw.nearby.ui.theme.Gray500
 import info.patrickmaciel.nlw.nearby.ui.theme.Typography
 
 @Composable
-fun MarketDetailsInfos(
+fun NearbyMarketDetailsInfos(
     modifier: Modifier = Modifier,
     market: Market,
 ) {
@@ -86,7 +86,7 @@ fun MarketDetailsInfos(
 @Preview
 @Composable
 private fun MarketDetailsInfosPreview() {
-    MarketDetailsInfos(
+    NearbyMarketDetailsInfos(
         modifier = Modifier.fillMaxWidth(),
         market = mockMarkets.first()
     )

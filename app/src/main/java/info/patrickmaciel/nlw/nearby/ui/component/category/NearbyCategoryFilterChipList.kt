@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import info.patrickmaciel.nlw.nearby.data.model.Category
+import info.patrickmaciel.nlw.nearby.data.model.mock.mockCategories
 
 @Composable
 fun NearbyCategoryFilterChipList(
@@ -54,13 +55,7 @@ fun NearbyCategoryFilterChipList(
 private fun NearbyCategoryFilterChipListPreview() {
     NearbyCategoryFilterChipList(
         modifier = Modifier.fillMaxWidth(),
-        categories = listOf(
-            Category(id = "1", name = "Alimentação"),
-            Category(id = "2", name = "Compras"),
-            Category(id = "3", name = "Hospedagem"),
-            Category(id = "4", name = "Supermercado"),
-            Category(id = "5", name = "Entretimento"),
-        ),
+        categories = mockCategories,
         onSelectedCategoryChange = {}
     )
 }

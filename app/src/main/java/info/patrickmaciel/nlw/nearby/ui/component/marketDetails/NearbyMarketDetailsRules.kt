@@ -16,7 +16,7 @@ import info.patrickmaciel.nlw.nearby.ui.theme.Gray400
 import info.patrickmaciel.nlw.nearby.ui.theme.Typography
 
 @Composable
-fun MarketDetailsRules(
+fun NearbyMarketDetailsRules(
     modifier: Modifier = Modifier,
     rules: List<Rule>
 ) {
@@ -43,7 +43,7 @@ fun MarketDetailsRules(
 @Preview
 @Composable
 private fun MarketDetailsRulesPreview() {
-    MarketDetailsRules(
+    NearbyMarketDetailsRules(
         modifier = Modifier.fillMaxWidth(),
         rules = mockRules,
     )
