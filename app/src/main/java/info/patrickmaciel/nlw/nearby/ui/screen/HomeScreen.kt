@@ -29,8 +29,8 @@ import info.patrickmaciel.nlw.nearby.ui.theme.Gray100
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
     val bottomSheetState = rememberBottomSheetScaffoldState();
-    var isBottomSheetOpened by remember { mutableStateOf(true) }
-    var configuration = LocalConfiguration.current;
+    val isBottomSheetOpened by remember { mutableStateOf(true) }
+    val configuration = LocalConfiguration.current;
 
     if (isBottomSheetOpened) {
         BottomSheetScaffold(
