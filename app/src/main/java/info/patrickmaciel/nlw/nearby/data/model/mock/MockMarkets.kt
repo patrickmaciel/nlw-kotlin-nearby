@@ -1,6 +1,7 @@
 package info.patrickmaciel.nlw.nearby.data.model.mock
 
 import info.patrickmaciel.nlw.nearby.data.model.Market
+import info.patrickmaciel.nlw.nearby.data.model.Rule
 
 var mockMarkets = listOf(
     Market(
@@ -9,7 +10,12 @@ var mockMarkets = listOf(
         name = "Supermercado ABC",
         description = "Supermercado ABC",
         coupons = 10,
-        rules = emptyList(),
+        rules = listOf(
+            Rule(id = "1", description = "Válido até 25/12", marketId = "1"),
+            Rule(id = "2", description = "Tem que comer tudo", marketId = "1"),
+            Rule(id = "3", description = "Desperdício paga", marketId = "1"),
+            Rule(id = "4", description = "Você não é tão bem-vindo assim", marketId = "1"),
+        ),
         latitude = -23.5505199,
         longitude = -46.6333094,
         address = "Rua das Flores, 123",
