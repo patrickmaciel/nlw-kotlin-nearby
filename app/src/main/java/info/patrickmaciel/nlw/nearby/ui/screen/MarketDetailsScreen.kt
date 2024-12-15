@@ -37,18 +37,20 @@ import info.patrickmaciel.nlw.nearby.ui.theme.Typography
 @Composable
 fun MarketDetailsScreen(
     modifier: Modifier = Modifier,
-    market: Market
+    market: Market,
+    onNavigationBack: () -> Unit
 ) {
     Box(
         modifier = modifier.fillMaxSize()
     ) {
+        // TODO: enable when the API is ready
 //        AsyncImage(
         Image(
             modifier = Modifier
                 .fillMaxWidth()
                 .fillMaxHeight(0.3f),
             contentDescription = "Imagem do Local",
-            contentScale = ContentScale.Fit,
+            contentScale = ContentScale.Crop,
 //            model = market.cover
             painter = painterResource(id = R.drawable.img_burger)
         )
@@ -97,16 +99,16 @@ fun MarketDetailsScreen(
                             .padding(vertical = 24.dp)
                     )
 
-                    if (market.rules.isNotEmpty()) {
-                        NearbyMarketDetailsRules(
-                            rules = market.rules
-                        )
-                        HorizontalDivider(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(vertical = 24.dp)
-                        )
-                    }
+//                    if (market.rules.isNotEmpty()) {
+//                        NearbyMarketDetailsRules(
+//                            rules = market.rules
+//                        )
+//                        HorizontalDivider(
+//                            modifier = Modifier
+//                                .fillMaxWidth()
+//                                .padding(vertical = 24.dp)
+//                        )
+//                    }
 
                     NearbyMarketDetailsCoupons(
                         coupons = listOf(
@@ -124,11 +126,20 @@ fun MarketDetailsScreen(
                 )
             }
         }
+
+        NearbyButton(
+            modifier = Modifier.align(Alignment.TopStart).padding(24.dp),
+            iconRes = R.drawable.ic_arrow_left,
+            onClick = onNavigationBack
+        )
     }
 }
 
 @Preview
 @Composable
 private fun MarketDetailsScreenPreview() {
-    MarketDetailsScreen(market = mockMarkets.first())
+    MarketDetailsScreen(
+        market = mockMarkets.first(),
+        onNavigationBack = {}
+    )
 }
